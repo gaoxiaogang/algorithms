@@ -6,8 +6,8 @@ import org.gxg.tools.StdIn;
 /**
  * 基于数组实现的固定容量字符串栈
  */
-public class FixedCapacityStackOfStrings extends ArrayAbstract {
-    private String[] a;// stack entries
+public class FixedCapacityStackOfStrings {
+    private final String[] a;// stack entries
 
     private int N;// size
 
@@ -22,19 +22,23 @@ public class FixedCapacityStackOfStrings extends ArrayAbstract {
 
     /**
      * 添加一个字符串
-     * TODO
      * @param item 入栈的元素
      */
     public void push(String item) {
+        if (N == a.length) {
+            throw new ArrayIndexOutOfBoundsException("Array a is full!");
+        }
         a[N++] = item;
     }
 
     /**
      * 删除最近添加的字符串
-     * TODO
      * @return String
      */
     public String pop() {
+        if (isEmpty()) {
+            return null;
+        }
         String s = a[--N];
         a[N] = null;
         return s;

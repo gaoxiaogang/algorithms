@@ -33,6 +33,6 @@ public class FixedCapacityStackOfStringsTests {
             collection.push("f"); // 调用可能抛异常的方法
         });
         // 验证异常消息内容
-        assertEquals("capacity is full", exception.getMessage());
+        assertEquals("Array a is full!", exception.getMessage());
     }
 }
