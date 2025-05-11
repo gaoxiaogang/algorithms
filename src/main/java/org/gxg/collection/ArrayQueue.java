@@ -13,8 +13,8 @@ public class ArrayQueue<E> {
     public ArrayQueue() {
         Data = (E[]) new Object[8];
         N = 0;
-        front = 0;
-        back = 1;
+        front = Data.length - 1;
+        back = 0;
     }
 
     // 队列扩容
