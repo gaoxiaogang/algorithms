@@ -43,24 +43,37 @@ public class ArrayQueue<E> {
     // 添加一个元素 (添加到尾部)
     // 添加到 back 所指位置，添加后back向后移动一位
     public void enqueue(E element) {
-        // TODO
+        if (N == Data.length) {
+            resize(Data.length * 2);
+        }
+        Data[back] = element;
+        back = increment(back);
+        N++;
     }
 
     // 删除最早添加的元素
     //
     public E dequeue() {
-        // TODO
-        return null;
+        if (isEmpty()) {
+            return null;
+        }
+        front = increment(front);
+        E e = Data[front];
+        Data[front] = null;
+        N--;
+        // 考虑缩小容量
+        if (Data.length > 8 && N == Data.length/4) {// 如果占用不足1/4，则缩容1倍
+            resize(Data.length/2);
+        }
+        return e;
     }
 
     public int size() {
-        // TODO
-        return 0;
+        return N;
     }
 
     public boolean isEmpty() {
-        // TODO
-        return true;
+        return N == 0;
     }
 
     // 非标准方法，仅为展示扩容过程
