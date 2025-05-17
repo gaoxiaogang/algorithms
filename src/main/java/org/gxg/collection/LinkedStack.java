@@ -22,12 +22,19 @@ public class LinkedStack<E> implements Iterable<E> {
     }
 
     public void push(E element) {
-        // TODO
+        Node oldFirst = first;
+        first = new Node(element, oldFirst);
+        N++;
     }
 
     public E pop() {
-        // TODO
-        return null;
+        if (N == 0) {
+            return null;
+        }
+        E element = first.element;
+        first = first.next;
+        N--;
+        return element;
     }
 
     public boolean isEmpty() {
