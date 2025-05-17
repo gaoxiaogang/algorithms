@@ -34,7 +34,7 @@ public class ArrayList<E> {
 
         // 允许index等于N，意味着在最后插入
         // 先搬家腾位置
-        // 如果index等于N，for循环不满足条件，也就不用挪家腾位置
+        // 如果index等于N，for循环不满足条件，也就不用搬家腾位置
         for (int i = N; i > index; i--) {// 从index开始的元素全部向后移一个位置
             Data[i] = Data[i-1];
         }
@@ -70,7 +70,22 @@ public class ArrayList<E> {
     // 删除指定位置的元素
     public E remove(int index) {
         // TODO
-        return null;
+        if (index >= N) {
+            return null;
+        }
+        E element = Data[index];
+        for (int i = index + 1; i < N; i++) {
+            Data[i - 1] = Data[i];
+        }
+        N--;
+        Data[N] = null;// 将该位置设置为null，以免内存泄漏.
+
+        // 如果大于初始长度(8)，并且占用不足1/4，则缩容1倍
+        if (Data.length > 8 && N == Data.length/4) {
+            resize(Data.length/2);
+        }
+
+        return element;
     }
 
     public static void main(String[] args) {
@@ -84,5 +99,7 @@ public class ArrayList<E> {
         list.add(0, 3);
         list.add(list.size(), 4);
         list.add(2, 5);
+
+        System.out.println("remove idx 0: " + list.remove(0));
     }
 }
