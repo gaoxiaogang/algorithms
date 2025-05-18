@@ -22,7 +22,6 @@ public class LinkedQueue<E> {
     // 添加一个元素 (添加到尾部)
     // 旧的尾部元素的next 指向这个新元素
     public void enqueue(E element) {
-        // TODO
         Node oldBack = last;
         last = new Node();
         last.element = element;
@@ -37,7 +36,6 @@ public class LinkedQueue<E> {
     // 删除最早添加的元素
     //
     public E dequeue() {
-        // TODO
         if (isEmpty()) {
             return null;
         }
@@ -51,12 +49,10 @@ public class LinkedQueue<E> {
     }
 
     public int size() {
-        // TODO
         return N;
     }
 
     public boolean isEmpty() {
-        // TODO
         return N == 0;
     }
 
