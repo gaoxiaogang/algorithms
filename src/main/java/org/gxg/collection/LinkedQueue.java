@@ -23,24 +23,41 @@ public class LinkedQueue<E> {
     // 旧的尾部元素的next 指向这个新元素
     public void enqueue(E element) {
         // TODO
-
+        Node oldBack = last;
+        last = new Node();
+        last.element = element;
+        if (isEmpty()) {
+            first = last;
+        } else {
+            oldBack.next = last;
+        }
+        N++;
     }
 
     // 删除最早添加的元素
     //
     public E dequeue() {
         // TODO
-        return null;
+        if (isEmpty()) {
+            return null;
+        }
+        if (N == 1) {
+            last = null;
+        }
+        Node firstNode = first;
+        first = firstNode.next;
+        N--;
+        return firstNode.element;
     }
 
     public int size() {
         // TODO
-        return 0;
+        return N;
     }
 
     public boolean isEmpty() {
         // TODO
-        return true;
+        return N == 0;
     }
 
     public static void main(String[] args) {
