@@ -69,7 +69,7 @@ public class ArrayList<E> {
 
     // 删除指定位置的元素
     public E remove(int index) {
-        if (index >= N) {
+        if (index < 0 || index >= N) {
             return null;
         }
         E element = Data[index];
