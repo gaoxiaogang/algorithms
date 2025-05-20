@@ -1,3 +1,19 @@
 
 1、编写 Date 类，实现 Comparable 接口
     见 Date
+2、描述选择排序（Selection) 对数组 E A S Y Q U E S T I O N 的排序过程。
+
+3、构造一个含有 N 个元素的数组，使选择排序运行过程中总是满足： a[j] < a[min]（由此 min 会不断更新）
+
+4、构造一个含有 N 个元素的数组，使插入排序运行过程中内循环(for)的判断结果总是假。
+    [  j > 0 && less(a[j], a[j-1])  ] 这个判断总是为假
+
+5、在待排序数组里的所有元素都相同时，选择排序 和 插入排序 谁更快？
+
+6、对于 逆序 数组，选择排序 和 插入排序 谁更快？
+
+7、实现 SelectionForBig2Small，将可排序数组(Comparable[] a) 按从 大 到 小 排序。
+  要求：不继承 sort.Common 类，所有功能都实现在 SelectionForBig2Small 类里面
+  （目的在于熟悉用到的less、exch等辅助排序方法）
+
+
