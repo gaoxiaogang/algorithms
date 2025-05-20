@@ -1,0 +1,32 @@
+
+1、如何对ArrayQueue里的元素进行迭代（逐一）访问？
+    参考ArrayStack、LinkedStack的实现。
+    改造 ArrayList、LinkedQueue类为可迭代。
+
+2、下面这段代码对队列 q 进行了什么操作？
+    Stack<String> stack = new Stack<>();
+    while (!q.isEmpty()) {
+        stack.push(q.dequeue());
+    }
+    while (!stack.isEmpty()) {
+        q.enqueue(stack.pop());
+    }
+
+3、编写一个可迭代的Stack用例，它含有一个静态的 copy() 方法，接受一个字符串的 栈 作为参数
+  并返回 该栈 的一个副本。这种能力是迭代器价值的一个重要体现，因为有了它我们无需改变基本API
+  就能够实现这种功能。
+  // TODO 填充 StackCopy类
+
+4、假设 x 是一条链表的某个结点且不是尾结点。下面这条语句的效果是什么？
+   x.next = x.next.next;
+
+5、假设 x 是一条链表中的某个结点，下面这段代码做了什么？
+    t.next = x.next;
+    x.next = t;
+6、为什么下面这段代码和上一题中的代码效果不同？
+    x.next = t;
+    t.next = x.next;
+
+7、实现一个双向队列 Deque。它同时支持在两端添加或删除元素。
+  可以基于 链表 实现、也可以基于 Array 实现，或者两个都实现一遍，加深熟练度。
+
