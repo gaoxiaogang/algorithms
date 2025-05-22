@@ -1,0 +1,5 @@
+1、成本模型实现
+    a、空for循环的成本；
+    b、for循环 + 比较（less）的成本；
+    c、交换（exch）的成本
+    见 CostCompare 类
