@@ -1,11 +1,7 @@
 package org.gxg.app.sort;
 
-import org.gxg.sort.Insertion;
-import org.gxg.sort.Quick;
-import org.gxg.sort.Selection;
-import org.gxg.sort.Shell;
+import org.gxg.sort.*;
 import org.gxg.tools.In;
-import org.gxg.tools.StdRandom;
 import org.gxg.tools.Stopwatch;
 
 public class SortCompareWithString {
@@ -16,6 +12,7 @@ public class SortCompareWithString {
         if (alg.equals("Insertion")) Insertion.sort(a);
         if (alg.equals("Shell")) Shell.sort(a);
         if (alg.equals("Quick")) Quick.sort(a);
+        if (alg.equals("Merge")) Merge.sort(a);
         return timer.elapsedTime();
     }
 
@@ -34,6 +31,7 @@ public class SortCompareWithString {
 //                , "Selection"
                 , "Quick"
                 , "Insertion"
+                , "Merge"
         };
 //        String[] sorts = {"Quick"};
 
