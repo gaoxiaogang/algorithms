@@ -15,5 +15,6 @@
 7、实现 SelectionForBig2Small，将可排序数组(Comparable[] a) 按从 大 到 小 排序。
   要求：不继承 sort.Common 类，所有功能都实现在 SelectionForBig2Small 类里面
   （目的在于熟悉用到的less、exch等辅助排序方法）
+  // TODO 实现 SelectionForBig2Small 类
 
 
