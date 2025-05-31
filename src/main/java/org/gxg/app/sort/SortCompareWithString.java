@@ -13,6 +13,7 @@ public class SortCompareWithString {
         if (alg.equals("Shell")) Shell.sort(a);
         if (alg.equals("Quick")) Quick.sort(a);
         if (alg.equals("Merge")) Merge.sort(a);
+        if (alg.equals("MergeBU")) MergeBU.sort(a);
         return timer.elapsedTime();
     }
 
@@ -32,6 +33,7 @@ public class SortCompareWithString {
                 , "Quick"
                 , "Insertion"
                 , "Merge"
+                , "MergeBU"
         };
 //        String[] sorts = {"Quick"};
 

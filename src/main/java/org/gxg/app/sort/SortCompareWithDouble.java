@@ -13,6 +13,7 @@ public class SortCompareWithDouble {
         if (alg.equals("Shell")) Shell.sort(a);
         if (alg.equals("Quick")) Quick.sort(a);
         if (alg.equals("Merge")) Merge.sort(a);
+        if (alg.equals("MergeBU")) MergeBU.sort(a);
         return timer.elapsedTime();
     }
 
@@ -31,10 +32,11 @@ public class SortCompareWithDouble {
     public static void main(String[] args) {
         String[] sorts = {
                 "Shell"
-                , "Selection"
+//                , "Selection"
                 , "Quick"
-                , "Insertion"
+//                , "Insertion"
                 , "Merge"
+                , "MergeBU"
         };
 //        String[] sorts = {"Quick"};
         for(String alg : sorts) {
@@ -45,7 +47,7 @@ public class SortCompareWithDouble {
             time = timeRandomInput(alg, 10000);
             System.out.printf("for %d random Doubles (%.2f seconds)\n", 10000, time);
 
-            time = timeRandomInput(alg, 100000);
+            time = timeRandomInput(alg, 1000000);
             System.out.printf("for %d random Doubles (%.2f seconds)\n", 100000, time);
             System.out.println();
         }
