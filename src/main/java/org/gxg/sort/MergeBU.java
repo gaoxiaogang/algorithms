@@ -9,9 +9,9 @@ public class MergeBU extends Common {
         int N = a.length;
         aux = new Comparable[N];
 
-        for (int i = 1; i < N; i += i) {// i表示子数组大小。i == 1, 2, 4, 8, ...
-            for (int j = 0; j < N-i; j += i+i) {// j表示子数组索引
-                merge(a, j, j+i-1, Math.min(j+i+i-1, N-1));
+        for (int sz = 1; sz < N; sz += sz) {// sz表示子数组大小(size)。i == 1, 2, 4, 8, ...
+            for (int j = 0; j < N-sz; j += sz+sz) {// j表示子数组索引
+                merge(a, j, j+sz-1, Math.min(j+sz+sz-1, N-1));
             }
         }
     }
