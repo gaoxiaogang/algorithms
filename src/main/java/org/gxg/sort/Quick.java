@@ -3,9 +3,23 @@ package org.gxg.sort;
 import org.gxg.tools.In;
 import org.gxg.tools.StdRandom;
 
+import java.util.Random;
+
 public class Quick extends Common {
+    // 打扰 a 的顺序
+    private static void shuffle(Object[] a) {
+        Random random = new Random(System.currentTimeMillis());
+        int n = a.length;
+        for (int i = 0; i < n; i++) {
+            int r = i + random.nextInt(n-i);     // between i and n-1
+            Object temp = a[i];
+            a[i] = a[r];
+            a[r] = temp;
+        }
+    }
     public static void sort(Comparable[] a) {
-        StdRandom.shuffle(a);
+//        StdRandom.shuffle(a);
+        shuffle(a);
         sort(a, 0, a.length - 1);
         assert isSorted(a);
     }
