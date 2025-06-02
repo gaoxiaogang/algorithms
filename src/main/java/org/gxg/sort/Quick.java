@@ -18,10 +18,12 @@ public class Quick extends Common {
         }
     }
     public static void sort(Comparable[] a) {
+        init_counter();
 //        StdRandom.shuffle(a);
         shuffle(a);
         sort(a, 0, a.length - 1);
         assert isSorted(a);
+        print_counter();
     }
 
     // quicksort the subarray from a[lo] to a[hi]
@@ -65,11 +67,14 @@ public class Quick extends Common {
 
     public static void main(String[] args) {
 //        String file = "testData/sort_words.txt";
-        String file = "testData/sort_tiny.txt";
+//        String file = "testData/sort_tiny.txt";
+//        String file = "testData/sort_same_words.txt";
+        String file = "testData/sort_large_same_words.txt";
+//        String file = "testData/sort_words.shakespeare.txt";
         In in = new In(file);
         String[] a = in.readAllStrings();
         sort(a);
-        show(a);
+//        show(a);
 
         in.close();
 
