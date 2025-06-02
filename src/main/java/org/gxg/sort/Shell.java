@@ -4,6 +4,7 @@ import org.gxg.tools.In;
 
 public class Shell extends Common {
     public static void sort(Comparable[] a) {
+        init_counter();
         int n = a.length;
 
         // 3x+1 increment sequence:  1, 4, 13, 40, 121, 364, 1093, ...
@@ -20,6 +21,7 @@ public class Shell extends Common {
             h /= 3;
         }
         assert isSorted(a);
+        print_counter();
     }
 
     public static void main(String[] args) {

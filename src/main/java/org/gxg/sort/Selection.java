@@ -5,6 +5,8 @@ import org.gxg.tools.In;
 public class Selection extends Common {
 
     public static void sort(Comparable[] a) {
+        init_counter();
+
         int n = a.length;
         for (int i = 0; i < n; i++) {
             int min = i;
@@ -14,6 +16,7 @@ public class Selection extends Common {
             exch(a, i, min);
         }
         assert isSorted(a);
+        print_counter();
     }
 
     public static void main(String[] args) {

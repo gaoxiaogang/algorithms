@@ -4,6 +4,7 @@ import org.gxg.tools.In;
 
 public class Insertion extends Common {
     public static void sort(Comparable[] a) {
+        init_counter();
 
         int n = a.length;
         for (int i = 1; i < n; i++) {
@@ -13,6 +14,7 @@ public class Insertion extends Common {
         }
 
         assert isSorted(a);
+        print_counter();
     }
 
     public static void main(String[] args) {
