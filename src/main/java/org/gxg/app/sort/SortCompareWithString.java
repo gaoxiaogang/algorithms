@@ -12,6 +12,9 @@ public class SortCompareWithString {
         if (alg.equals("Insertion")) Insertion.sort(a);
         if (alg.equals("Shell")) Shell.sort(a);
         if (alg.equals("Quick")) Quick.sort(a);
+        if (alg.equals("Quick3way")) Quick3way.sort(a);
+        if (alg.equals("QuickBentleyMcIlroy")) QuickBentleyMcIlroy.sort(a);
+        if (alg.equals("QuickGxg")) QuickGxg.sort(a);
         if (alg.equals("Merge")) Merge.sort(a);
         if (alg.equals("MergeBU")) MergeBU.sort(a);
         return timer.elapsedTime();
@@ -19,6 +22,7 @@ public class SortCompareWithString {
 
     private static String[] readWords() {
         String file = "testData/sort_large_words.txt";
+//        String file = "testData/sort_large_same_words.txt";
 //        String file = "testData/sort_words.shakespeare.txt";
         In in = new In(file);
         String[] a = in.readAllStrings();
@@ -28,12 +32,15 @@ public class SortCompareWithString {
 
     public static void main(String[] args) {
         String[] sorts = {
-                "Shell"
-//                , "Selection"
-                , "Quick"
-                , "Insertion"
+                "Quick"
+                , "Quick3way"
+                , "QuickBentleyMcIlroy"
+                , "QuickGxg"
                 , "Merge"
                 , "MergeBU"
+                , "Shell"
+//                , "Insertion"
+//                , "Selection"
         };
 //        String[] sorts = {"Quick"};
 
