@@ -6,6 +6,7 @@ public class MergeBU extends Common {
     private static Comparable[] aux;// 合并所需的辅助数组
 
     public static void sort(Comparable[] a) {
+        init_counter();
         int N = a.length;
         aux = new Comparable[N];
 
@@ -14,6 +15,7 @@ public class MergeBU extends Common {
                 merge(a, j, j+sz-1, Math.min(j+sz+sz-1, N-1));
             }
         }
+        print_counter();
     }
 
     private static void merge(Comparable[] a, int lo, int mid, int hi) {
@@ -36,8 +38,8 @@ public class MergeBU extends Common {
     }
 
     public static void main(String[] args) {
-        String file = "testData/sort_words.txt";
-//        String file = "testData/sort_tiny.txt";
+//        String file = "testData/sort_words.txt";
+        String file = "testData/sort_tiny.txt";
         In in = new In(file);
         String[] a = in.readAllStrings();
         sort(a);
