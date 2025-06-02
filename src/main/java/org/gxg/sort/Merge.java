@@ -4,9 +4,20 @@ import org.gxg.tools.In;
 
 public class Merge extends Common {
     static Comparable[] aux;
+
+    // override Common method
+    protected static void print_counter() {
+        System.out.println();
+        System.out.println("stats:");
+        System.out.println(exch_counter.tally()/2 + " exch");
+        System.out.println(compare_counter.toString());
+    }
+
     public static void sort(Comparable[] a) {
+        init_counter();
         aux = new Comparable[a.length];
         sort(a, 0, a.length - 1);
+        print_counter();
     }
 
     private static void sort(Comparable[] a, int lo, int hi) {
@@ -23,17 +34,26 @@ public class Merge extends Common {
         // 将待排序数据临时存入 aux 对应的位置
         for (int i = lo; i <= hi; i++) {
             aux[i] = a[i];
+            exch_counter.increment();
         }
 
         int k = lo;
         int j = mid + 1;
         for (int i = lo; i <= hi; i++) {
-            if (k > mid) a[i] = aux[j++];
-            else if (j > hi) a[i] = aux[k++];
+            if (k > mid) {
+                a[i] = aux[j++];
+                exch_counter.increment();
+            }
+            else if (j > hi) {
+                a[i] = aux[k++];
+                exch_counter.increment();
+            }
             else if (less(aux[k], aux[j])) {
                 a[i] = aux[k++];
+                exch_counter.increment();
             } else {
                 a[i] = aux[j++];
+                exch_counter.increment();
             }
         }
     }
