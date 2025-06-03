@@ -15,6 +15,10 @@ abstract public class Common {
     }
 
     protected static void print_counter() {
+        if (exch_counter == null) {
+            System.out.println("counters did not init.");
+            return;
+        }
         System.out.println("stats:");
         System.out.println(exch_counter.toString());
         System.out.println(compare_counter.toString());
@@ -26,7 +30,7 @@ abstract public class Common {
     // is v < w ?
     @SuppressWarnings("unchecked")
     protected static boolean less(Comparable v, Comparable w) {
-        compare_counter.increment();
+        if (compare_counter != null) compare_counter.increment();
         return v.compareTo(w) < 0;
     }
 
@@ -35,12 +39,12 @@ abstract public class Common {
         Comparable swap = a[i];
         a[i] = a[j];
         a[j] = swap;
-        exch_counter.increment();
+        if (exch_counter != null) exch_counter.increment();
     }
 
     // does v == w ?
     protected static boolean eq(Comparable v, Comparable w) {
-        compare_counter.increment();
+        if (compare_counter != null) compare_counter.increment();
         if (v == w) return true;    // optimization when reference equal
         return v.compareTo(w) == 0;
     }
