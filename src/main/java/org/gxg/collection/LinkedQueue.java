@@ -2,7 +2,9 @@ package org.gxg.collection;
 
 import org.gxg.tools.In;
 
-public class LinkedQueue<E> {
+import java.util.Iterator;
+
+public class LinkedQueue<E> implements Iterable<E> {
     private int N;
 
     private Node first;// 指向第1个添加的元素
@@ -12,6 +14,26 @@ public class LinkedQueue<E> {
     public LinkedQueue() {
         first = null;
         last = null;
+    }
+
+    @Override
+    public Iterator iterator() {
+        return new QueueIterator();
+    }
+
+    private class QueueIterator implements Iterator<E> {
+        private Node currentNode = first;
+        @Override
+        public boolean hasNext() {
+            return currentNode != null;
+        }
+
+        @Override
+        public E next() {
+            E element = currentNode.element;
+            currentNode = currentNode.next;
+            return element;
+        }
     }
 
     private class Node {
@@ -66,6 +88,11 @@ public class LinkedQueue<E> {
         }
         System.out.println("......queue enqueue test end");
 
+        System.out.print("[");
+        for (Integer i : queue) {
+            System.out.printf(i + ", ");
+        }
+        System.out.print("]");
         System.out.println("......queue dequeue test starter");
         int size = queue.size();
         for (int i = 0; i < size; i++) {
