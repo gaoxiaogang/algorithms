@@ -1,0 +1,23 @@
+1、BinarySearchST 使用了两个数组来分别存放key和val(private Key[] keys;private Value[] vals;)
+    能否只使用一个数组？
+
+
+2、为什么键的值不能为（null）？
+
+3、在 BinarySearchST 中的类型转换之前，为什么不将keys[] 和 vals[] 一样声明为Object[]（而是Comparable[])？
+    keys = (Key[]) new Comparable[capacity];
+    vals = (Value[]) new Object[capacity];
+
+4、我们为什么不使用前面学过的 快速排序、合并排序、堆排序 来提高性能呢？
+
+5、开发一个符号表的实现 ArrayST，使用（无序）数组来实现我们的基本API（功能参见SequentialSearchST）。
+
+6、描述用 SequentialSearchST 将键 E A S Y Q U E S T I O N 插入一个空符号表的过程。一共进行了多少次比较？
+
+7、描述用 BinarySearchST 将键 E A S Y Q U E S T I O N 插入一个空符号表的过程。一共进行了多少次比较？
+
+8、修改 BinarySearchST（建议新建 BinarySearchSTv2 类），用一个 Item 对象的数组而非两个平行数组来保存键和值。
+    再增加一个构造函数，接受一个 Item 的数组为参数，并将其合并排序(调用我们之前写好的Merge类)
+
+9、有序的插入。修改 BinarySearchST ，使得插入一个比当前所有键都大的键只需要常数时间（这样在构造符号表时有序地
+    使用put()插入键值对就只需要线性时间了）
