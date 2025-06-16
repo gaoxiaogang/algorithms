@@ -303,6 +303,8 @@ public class BST<Key extends Comparable<Key>, Value> {
 
         for (String s : st.keys())
             System.out.println(s + " " + st.get(s));
+
+        in.close();
     }
 
 }
