@@ -662,5 +662,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
         for (String s : st.keys())
             System.out.println(s + " " + st.get(s));
         System.out.println();
+
+        in.close();
     }
 }
